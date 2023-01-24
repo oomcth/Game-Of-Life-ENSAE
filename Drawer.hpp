@@ -18,10 +18,9 @@ class Drawer{
     
 public:
     Drawer();
+    
     std::vector<item> items;
     int target = 0;
-    
-    
 };
 
 

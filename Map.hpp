@@ -17,13 +17,16 @@
 class Map
 {
 public:
-    Map(int rows, int cols);
+    Mapx(int rows, int cols);
+    
     void extend(int rows, int cols);
+    void Clear();
+    
     Tile& Get_Tile(int x, int y);
     int neighbors(int x, int y, int loop);
     int** Get_neighbors(int x, int y);
     std::vector<std::vector<Tile*>> tiles;
-    void Clear();
+    
 };
 
 #endif /* Map_hpp */

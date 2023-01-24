@@ -21,26 +21,23 @@ public:
     ~Game();
     
     void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen, World world);
-    
     void handleEvent();
     void update();
     void render();
     void clean();
     
     bool running() {return isRunning;}
-    
-    int loopUpdate = 600;
-    
     bool playing = true;
-    
+    bool isRunning;
+    bool clicked = true;
+    bool transposed = false;
+    int loopUpdate = 600;
     int loop = 0;
     Painter *painter;
     World *world;
-    bool isRunning;
     SDL_Window *window;
     SDL_Renderer *renderer;
-    bool clicked = true;
-    bool transposed = false;
     Drawer *drawer;
+
 };
 #endif /* Game_hpp */

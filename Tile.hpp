@@ -15,16 +15,18 @@
 class Tile{
 public:
     Tile();
-    int x, y;
-    int Alive(int loop);
-    int64_t updated = -1;
-    bool lastState;
+    
     void Create(int64_t loop);
     void Kill(int64_t loop);
     void Toggle();
     void Draw();
-    bool fixed = false;
+    
+    int x, y;
     int alive = 0;
+    int Alive(int loop);
+    int64_t updated = -1;
+    bool lastState;
+    bool fixed = false;
     
 };
 #endif /* Tile_hpp */
