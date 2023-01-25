@@ -3,18 +3,33 @@ c++ Game Of Life
 
 ## principe du code
 
-La bibliothéque SQL permet de gerer les graphismes.
+La bibliothéque SDL permet de gerer les graphismes.
 Après une initialisation du programme, est appellé en boucle une mise à jour des composants du programme puis une étude des inputs de l'utilisateur et enfin un affichage de graphismes.
 
 La complexité de la mise à jour du jeu de la vie est linéaire en le nombre de case en vie. On met à jour toute les cases en vie puis leur proche voisins. Cela nous évite de mettre à jour toute la grille.
 
 ## Structure globale du code
 
+
+## Utilisation 
+
+cliker dans la grille permet de copier son motif dans celle-ci.
+clicker sur l'une des cases sur la gauche de votre écran permet de selectionner un motif correspondant. Attention, si votre motif est plus grand que la taille de la grille affiché à l'écran, il faudra zoumer en arrière pour pouvoir l'afficher sur la grille.
+
+ - touche espace : met en pause le jeu
+ - touche 1 : zoom en arrière 
+ - touche 2 : zoom en avant
+ - touche t : transpose le motif utilisé.
+ - touche n : met à jour le jeu une fois
+ - touche echap : tue toute les cases du jeu
+ - touche fléche vers le haut : accélere le jeu
+ - touche fléche vers le bas : ralenti le jeu
+
 ### Classe Game : 
 
 Cette classe sert à manipuler l'ensemble des objets du code. Après avoir initialiser ces objets, la classe va les mettre à jour, gerer les inputs de l'utilisateur et afficher les graphismes.
 
- - la fonction init innitialise les composants en particulier SQL
+ - la fonction init innitialise les composants en particulier SDL
  - la fonction handle event gère les inputs du joueur
  - la fonction update met à jour les objet
  - la fonction draw les affichent
@@ -58,4 +73,21 @@ Cette classe gère les élément dans la marge du programme, les carré correspo
 
 ### La classe Item
 
-Cette classe décrit un motif utilisé par la classe drawer.
+Cette classe décrit un motif utilisé par la classe drawer. Du polumorphisme permet de manipuler ces différents motifs en même temps.
+
+## Bugs et remarques : 
+
+ - Comme précisé précédamanent, la fonction Get_neighbours de la classe Map renvoie plus de voisins que neccessaire ce qui multiplie la complexité par 4.
+ - Si trop de case sont en vie (sur max M1 pro, de l'ordre de 750 en mode  debugage, plus lorsque l'on lance un exécutable), SDL crach ce qui fait crasher le programme. Ce problème est surement due a une mauvaise connaissance de la librarie entrainnant une mauvaise utilisation de celle-ci.
+ - Sur certaine version du code, il était possible de faire planter le programme en cloquant hors de la grille de case. Ce problème semble ne plus avoir lieu
+ - Le programme utilise énormément de pointeur du à l'habitude d'un des membres du groupe à travailler en C# qui utilise à peu de chose pret que des pointeurs. Il doit être possible de limiter l'usage de pointeur dans ce programme.
+ 
+ ## Améliorations possible du code :
+ 
+ ### Complexité
+ 
+ En dehors de la résolution du problème autour de la fonction Get_neihgbours de la classe world, la plus grand piste d'amélioration des performance et un meilleur usage de SDL voir l'utilisation d'un autre framwork de graphisme SDL, ce dernier s'étant révéllé peu stable sur Mac M1 Pro.
+ 
+ ### gui
+ 
+ Nous n'avons pas trop chercher à developer une belle interface utilisateur, ceci étant une tache longue ne permettant pas de mettre en valeur nos compétences en c++.
