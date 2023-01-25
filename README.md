@@ -8,9 +8,6 @@ Après une initialisation du programme, est appellé en boucle une mise à jour 
 
 La complexité de la mise à jour du jeu de la vie est linéaire en le nombre de case en vie. On met à jour toute les cases en vie puis leur proche voisins. Cela nous évite de mettre à jour toute la grille.
 
-## Structure globale du code
-
-
 ## Utilisation 
 
 cliker dans la grille permet de copier son motif dans celle-ci.
@@ -91,3 +88,8 @@ Cette classe décrit un motif utilisé par la classe drawer. Du polumorphisme pe
  ### gui
  
  Nous n'avons pas trop chercher à developer une belle interface utilisateur, ceci étant une tache longue ne permettant pas de mettre en valeur nos compétences en c++.
+ 
+ 
+ # Screenshots
+ 
+ <img width="806" alt="Capture d’écran 2023-01-25 à 14 18 25" src="https://user-images.githubusercontent.com/99043449/214573545-c8575118-5aa1-4b14-a3c6-183ba533223e.png">
