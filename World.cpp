@@ -16,10 +16,8 @@ World::World(int cols, int rows){
     x_size = cols;
     y_size = rows;
     map = new Map(cols, rows);
-    maxMap = new Map(cols, rows);
-    *maxMap = *map;
     
-    prev_dark_tiles = new Tile*[x_size * y_size * 2 * 2 * 2];
+    prev_dark_tiles = new Tile*[x_size * y_size];
     next_dark_tiles = new Tile*[x_size * y_size];
     prev_dark_count = 0;
     next_dark_count = 0;

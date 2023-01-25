@@ -17,7 +17,8 @@
 class Map
 {
 public:
-    Mapx(int rows, int cols);
+    
+    Map(int rows, int cols);
     
     void extend(int rows, int cols);
     void Clear();

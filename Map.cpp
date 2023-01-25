@@ -95,13 +95,13 @@ void Map::extend(int rows, int cols)
         }
     }
     
-    for(int i = 0; i < cols + 2; i++){
+    for(int i = 0; i < rows + 2; i++){
         tiles[i][0] = new Tile();
         tiles[i][cols + 1] = new Tile();
         tiles[i][0]->fixed = true;
         tiles[i][cols+1]->fixed = true;
     }
-    for(int i = 0; i < rows + 2; i++){
+    for(int i = 0; i < cols + 2; i++){
         tiles[0][i] = new Tile();
         tiles[rows + 1][i] = new Tile();
         tiles[0][i]->fixed = true;

@@ -27,15 +27,17 @@ public:
     void clean();
     
     bool running() {return isRunning;}
-    bool playing = true;
+    
+private:
     bool isRunning;
     bool clicked = true;
+    bool playing = true;
     bool transposed = false;
     int loopUpdate = 600;
     int loop = 0;
+    SDL_Window *window;
     Painter *painter;
     World *world;
-    SDL_Window *window;
     SDL_Renderer *renderer;
     Drawer *drawer;
 

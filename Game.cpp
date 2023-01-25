@@ -68,20 +68,25 @@ void Game::handleEvent(){
             
             if(event.button.button == SDL_BUTTON_LEFT){
                 if(!clicked){
-                    int temp1 = int((x-painter->xmargin)/(painter->width/world->x_size));
-                    int temp2 = int((y)/(painter->height/world->y_size));
+                    double temp1 = double(painter->width)/double(world->x_size);
+                    double temp2 = double(painter->height)/double(world->y_size);
                     if(x > painter->xmargin){
-                        world->map->Get_Tile(temp1, temp2).Toggle();
-                        world->map->Get_Tile(temp1, temp2).updated = -1;
-                        world->prev_dark_tiles[world->prev_dark_count] = &(world->map->Get_Tile(temp1, temp2));
+                        world->map->Get_Tile(int((x-painter->xmargin)/temp1), int(double(y)/temp2)).Toggle();
+                        world->map->Get_Tile(int((x-painter->xmargin)/temp1), int(y/temp2) ).updated = -1;
+                        world->prev_dark_tiles[world->prev_dark_count] = &(world->map->Get_Tile(int((x-painter->xmargin)/temp1), int(y/temp2)));
                         world->prev_dark_count++;
                     }
                 }
                 else{
+                    
                     if(x > painter->xmargin and drawer->items[drawer->target].w < world->x_size + 2 and drawer->items[drawer->target].h < world->y_size + 2){
+                        double temp1 = double(painter->width)/double(world->x_size);
+                        double temp2 = double(painter->height)/double(world->y_size);
+                        int temp3 = int(double(x-painter->xmargin)/temp1);
+                        int temp4 = int(double(y)/temp2);
+                        int mx = std::max(0, temp3);
+                        int my = std::max(0,temp4);
                         if(!transposed){
-                            int mx = std::max(0, int((x-painter->xmargin)*world->x_size/painter->width));
-                            int my = std::max(0,int(y*world->y_size/painter->height));
                             if(mx+drawer->items[drawer->target].w > world->x_size){
                                 mx = world->x_size - drawer->items[drawer->target].w;
                             }
@@ -99,8 +104,7 @@ void Game::handleEvent(){
                             }
                         }
                         else{
-                            int mx = std::max(0, int((x-painter->xmargin)*world->x_size/painter->width));
-                            int my = std::max(0,int(y*world->y_size/painter->height));
+                            
                             if(mx+drawer->items[drawer->target].h > world->x_size){
                                 mx = world->x_size - drawer->items[drawer->target].h;
                             }

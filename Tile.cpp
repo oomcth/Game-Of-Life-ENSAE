@@ -42,5 +42,5 @@ void Tile::Create(int64_t loop){
 
 // change a Tile's alive state.
 void Tile::Toggle(){
-    alive = !alive;
+     alive = !alive;
 }
