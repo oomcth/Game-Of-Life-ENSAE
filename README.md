@@ -89,6 +89,10 @@ Cette classe décrit un motif utilisé par la classe drawer. Du polumorphisme pe
  
  Nous n'avons pas trop chercher à developer une belle interface utilisateur, ceci étant une tache longue ne permettant pas de mettre en valeur nos compétences en c++.
  
+ ### Jeu
+ 
+ Les case sur les bors de la grille sont toujours morte, cela peu créer des phénoméne de bords.
+ 
  
  # Screenshots
  
