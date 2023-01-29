@@ -95,6 +95,5 @@ Cette classe décrit un motif utilisé par la classe drawer. Du polumorphisme pe
  
  
  # Screenshots
- 
-<img width="1728" alt="Capture d’écran 2023-01-25 à 14 19 56" src="https://user-images.githubusercontent.com/99043449/214574016-cc6fbcd6-a028-4379-bcf0-072edcdc329e.png">
 
+![image](https://user-images.githubusercontent.com/99043449/215335532-debc664f-39d8-4ee1-ba1e-c935125ef63c.png)
