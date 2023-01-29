@@ -43,13 +43,11 @@ void World::newWorld(int cols, int rows, World *world)
 // update the world
 void World::Update(){
     
-    std::cout << prev_dark_count << std::endl;
-    
     loop++;
     next_dark_count = 0;
     for(int i = 0; i < prev_dark_count; i++){
         if(prev_dark_tiles[i]->updated != loop){
-            int count = map->neighbors(prev_dark_tiles[i]->x, prev_dark_tiles[i]->y, loop);
+            int count = map->neighbours(prev_dark_tiles[i]->x, prev_dark_tiles[i]->y, loop);
             // std::cout << count << prev_dark_tiles[i].x << "\n";
             if(prev_dark_tiles[i]->Alive(loop) == 1){
                 if(count != 2 and count != 3){
@@ -72,10 +70,10 @@ void World::Update(){
     }
     
     for(int i = 0; i < prev_dark_count; i++){
-        int** temp = map->Get_neighbors(prev_dark_tiles[i]->x, prev_dark_tiles[i]->y);
+        int** temp = map->Get_neighbours(prev_dark_tiles[i]->x, prev_dark_tiles[i]->y);
         for(int j = 0; j < 24;j++){
             if(map->Get_Tile(temp[j][0], temp[j][1]).updated != loop){
-                int count = map->neighbors(temp[j][0], temp[j][1], loop);
+                int count = map->neighbours(temp[j][0], temp[j][1], loop);
                 if(count == 3 and !map->Get_Tile(temp[j][0], temp[j][1]).Alive(loop)){
                     map->Get_Tile(temp[j][0], temp[j][1]).Create(loop);
                     next_dark_tiles[next_dark_count] = &map->Get_Tile(temp[j][0], temp[j][1]);
@@ -84,15 +82,12 @@ void World::Update(){
             }
         }
         
-        
         for(int o = 0; o < 8; o++){
             delete temp[o];
         }
         delete temp;
     }
-    
-    
-    
+
     prev_dark_count = next_dark_count;
     prev_dark_tiles = next_dark_tiles;
 

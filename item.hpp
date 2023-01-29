@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <string>
 
-//header files arn't commented
+//header files aren't commented
 
 class item{
   

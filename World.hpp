@@ -12,7 +12,7 @@
 #include "Tile.hpp"
 #include "map.hpp"
 
-//header files arn't commented
+//header files aren't commented
 
 class World{
     

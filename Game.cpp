@@ -128,7 +128,6 @@ void Game::handleEvent(){
                     drawer->target = -1;
                 }
                 
-                // drawRect(0, 60 + 50 * i, 40, 40, renderer, true, drawer->target == i);
                 float tempy = (y-60)/50;
                 if(x < 40){
                     if(tempy < drawer->items.size()){

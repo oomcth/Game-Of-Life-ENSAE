@@ -8,7 +8,7 @@
 #ifndef Drawer_hpp
 #define Drawer_hpp
 
-//header files arn't commented
+//header files aren't commented
 
 #include <stdio.h>
 #include "item.hpp"

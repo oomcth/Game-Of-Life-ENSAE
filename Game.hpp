@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "Drawer.hpp"
 
-//header files arn't commented
+//header files aren't commented
 
 class Game{
     

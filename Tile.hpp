@@ -8,7 +8,7 @@
 #ifndef Tile_hpp
 #define Tile_hpp
 
-//header files arn't commented
+//header files aren't commented
 
 #include <stdio.h>
 

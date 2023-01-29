@@ -12,7 +12,7 @@
 #include <vector>
 #include "Tile.hpp"
 
-//header files arn't commented
+//header files aren't commented
 
 class Map
 {
@@ -24,8 +24,8 @@ public:
     void Clear();
     
     Tile& Get_Tile(int x, int y);
-    int neighbors(int x, int y, int loop);
-    int** Get_neighbors(int x, int y);
+    int neighbours(int x, int y, int loop);
+    int** Get_neighbours(int x, int y);
     std::vector<std::vector<Tile*>> tiles;
     
 };

@@ -16,10 +16,9 @@ int main(int argc, const char * argv[]) {
     
     World world(20, 20);
     
-    Game *game = nullptr;
-    game = new Game();
+    Game *game = new Game();
     
-    game->init("a", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false, world);
+    game->init("Game Of Life", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false, world);
     
     while(game->running()){
         game->handleEvent();
@@ -33,8 +32,3 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-
-// zoom debug wola
-// transpose ok
-// plus de item
-// pict item

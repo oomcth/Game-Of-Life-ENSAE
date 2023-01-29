@@ -12,7 +12,7 @@
 #include <iterator>
 #include <string>
 
-//Painter is a class that is used to draw different items.
+//Painter is a class that is used to draw the game.
 
 
 Painter::~Painter(){
@@ -33,8 +33,8 @@ void Painter::drawRect(int x, int y, int w, int h, SDL_Renderer *renderer, bool 
     SDL_Rect rect;
     rect.x = x;
     rect.y = y;
-    rect.w = w;
-    rect.h = h;
+    rect.w = w - 1;
+    rect.h = h - 1;
     
     if(!red){
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
@@ -51,7 +51,6 @@ void Painter::drawRect(int x, int y, int w, int h, SDL_Renderer *renderer, bool 
 
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
-    // SDL_RenderPresent(renderer);
 }
 
 // Draw the whole screen but the drawer.
@@ -92,8 +91,7 @@ void Painter::drawWorld(SDL_Renderer *renderer, Drawer *drawer, bool transposed)
 
 // Draw an item.
 void Painter::drawItem(SDL_Renderer *renderer, item item, int x, int y, bool transposed){
-    // std::cout << item.w << " " << item.h << std::endl;
-    // std::cout<<x;
+
     double temp1 = double(width)/double(world->x_size);
     double temp2 = double(height)/double(world->y_size);
     if(drawer->items[drawer->target].w < world->x_size + 2 and drawer->items[drawer->target].h < world->y_size + 2)
@@ -129,8 +127,6 @@ void Painter::drawItem(SDL_Renderer *renderer, item item, int x, int y, bool tra
             }
         }
     }
-    
-    
 }
 
 // draw the drawer.

@@ -124,13 +124,13 @@ Tile& Map::Get_Tile(int x, int y){
     }
 }
 
-// returns how many alive neigbors a tiles has.
-int Map::neighbors(int x, int y, int loop){
+// returns how many alive neighbours a tiles has.
+int Map::neighbours(int x, int y, int loop){
     return Get_Tile(x+1, y+1).Alive(loop) + Get_Tile(x+1, y).Alive(loop) + Get_Tile(x+1, y-1).Alive(loop) + Get_Tile(x, y-1).Alive(loop) + Get_Tile(x-1, y-1).Alive(loop) + Get_Tile(x-1, y).Alive(loop) + Get_Tile(x-1, y+1).Alive(loop) + Get_Tile(x, y+1).Alive(loop);
 }
 
-// return an array of a tile's neighbors.
-int** Map::Get_neighbors(int x, int y){
+// return an array of a tile's neighbours.
+int** Map::Get_neighbours(int x, int y){
     int** r = 0;
     r = new int*[24];
     for(int temp = 0; temp<24;temp++){

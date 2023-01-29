@@ -15,7 +15,7 @@
 #include <string>
 #include "item.hpp"
 
-//header files arn't commented
+//header files aren't commented
 
 class Painter{
     
